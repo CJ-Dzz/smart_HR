@@ -1,0 +1,12 @@
+# Ignore private config with secrets
+back/src/main/resources/application-private.yml
+# Ignore private config with secrets
+back/src/main/resources/application-private.yml
+
+# IDE/editor
+.idea/
+.vscode/
+
+# Dependencies/build
+front/node_modules/
+back/target/
