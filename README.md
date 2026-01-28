@@ -14,7 +14,6 @@
 - 运维：Docker / Docker Compose。
 
 ## 3. 系统架构图 🧭
-> 人岗匹配交给图谱，出题灵感交给 RAG。
 **HR 流程：简历/岗位 → Neo4j 知识图谱 → 混合打分（图谱评分 + LLM 评估）**
 ```mermaid
 flowchart LR
