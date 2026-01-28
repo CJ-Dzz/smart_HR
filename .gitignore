@@ -10,3 +10,6 @@ back/src/main/resources/application-private.yml
 # Dependencies/build
 front/node_modules/
 back/target/
+
+# Docs (local notes/diagrams)
+docs/

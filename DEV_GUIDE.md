@@ -5,7 +5,7 @@
 确保你已安装：
 
 - **Docker Desktop**（包含 Docker Compose）
-- **JDK 17+**
+- **JDK 21**
 - **Maven 3.8+**
 - **Node.js 18+**（含 npm）
 
@@ -15,7 +15,7 @@
 
 ```bash
 # 进入 docker 目录
-cd /Users/luoqinfeng/my_project/learning_project/smart-hr/docker
+cd /smart-hr/docker
 
 # 启动所有基础设施（PostgreSQL、Redis、Neo4j、Milvus）
 docker-compose -f docker-compose.dev.yml up -d
@@ -51,13 +51,13 @@ docker exec smarthr-neo4j cypher-shell -u neo4j -p neo4j123 < ./neo4j/init-skill
 
 ### 第三步：配置阿里云 API Key
 
-在启动后端之前，需要配置阿里云百炼 API Key：
+在启动后端之前，需要在application.yml中配置阿里云百炼 以及 openAi的 API Key：
 
 ```bash
 # 方法1：设置环境变量（推荐）
 export DASHSCOPE_API_KEY=你的阿里云百炼API_KEY
 
-# 方法2：直接修改 application.yml（不推荐，会提交到 Git）
+# 方法2：直接修改 application.yml
 # 编辑 back/src/main/resources/application.yml
 # 找到 api-key: ${DASHSCOPE_API_KEY:} 改为你的 key
 ```
@@ -68,7 +68,7 @@ export DASHSCOPE_API_KEY=你的阿里云百炼API_KEY
 
 ```bash
 # 进入后端目录
-cd /Users/luoqinfeng/my_project/learning_project/smart-hr/back
+cd smart-hr/back
 
 # 方法1：使用 Maven 直接启动（推荐）
 ./mvnw spring-boot:run
@@ -90,7 +90,7 @@ java -jar target/smart-hr-*.jar
 
 ```bash
 # 新开一个终端，进入前端目录
-cd /Users/luoqinfeng/my_project/learning_project/smart-hr/front
+cd smart-hr/front
 
 # 安装依赖（首次启动需要）
 npm install
@@ -118,8 +118,8 @@ npm run dev
 
 1. 访问 http://localhost:5173/login
 2. 使用预置账号登录：
-   - HR 账号：`hr_admin` / `password123`
-   - 面试官账号：`interviewer_admin` / `password123`
+   - HR 账号：`hr_admin` / `password`
+   - 面试官账号：`interviewer_admin` / `password`
 
 ### 2. HR 功能测试
 
