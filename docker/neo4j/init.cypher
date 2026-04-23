@@ -250,6 +250,7 @@ MERGE (problem)-[:BELONGS_TO]->(c8)
 MERGE (logic)-[:BELONGS_TO]->(c8)
 
 // 输出统计
+WITH *
 MATCH (s:Skill) RETURN count(s) as totalSkills;
 MATCH (c:SkillCategory) RETURN count(c) as totalCategories;
 MATCH ()-[r:REQUIRES]->() RETURN count(r) as requiresRelations;

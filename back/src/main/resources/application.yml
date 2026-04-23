@@ -63,14 +63,15 @@ spring:
   ai:
     dashscope:
       # 配置为dashscope的api-key
-      api-key: ${DASHSCOPE_API_KEY:}
+      # 使用占位默认值，避免未配置密钥时在启动阶段直接失败
+      api-key: ${DASHSCOPE_API_KEY:placeholder-api-key}
       chat:
         options:
-          model: qwen-plus
+          model: qwen3.5-122b-a10b
           temperature: 0.7
       embedding:
         options:
-          model: text-embedding-v2
+          model: qwen3-vl-embedding
     openai:
       # 配置为你的 OpenAI Key
       api-key: ${OPENAI_API_KEY:}

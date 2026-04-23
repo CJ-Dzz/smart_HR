@@ -313,6 +313,7 @@ MERGE (datastructure)-[:BELONGS_TO]->(c8)
 MERGE (systemdesign)-[:BELONGS_TO]->(c8)
 
 // 输出扩展后统计
+WITH *
 MATCH (s:Skill) RETURN count(s) as totalSkills;
 MATCH (c:SkillCategory) RETURN count(c) as totalCategories;
 
